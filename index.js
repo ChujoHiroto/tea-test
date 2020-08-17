@@ -1,4 +1,4 @@
-var url = "http://localhost:8889/";
+var url = "https://lit-caverns-19776.herokuapp.com/";
 
 async function GetMessage() {
   const j = await fetch(url, {
