@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8" />
+    <title>テスト!</title>
+    <script type='text/javascript' src="./index.js"></script>
+</head>
+
+<body>
+    APIを試しに叩いてみる。
+    <input type="button" id="test" value="呼び出す" onclick="GetMessage()">
+    <div id="message">
+    </div>
+    <form name="form1">
+        <input type="text" name="text1" value="この内容で書き換える">
+    </form>
+    <input type="button" id="test" value="書き換える" onclick="PostMessage(document.form1.text1.value)">
+</body>
+
+</html>

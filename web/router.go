@@ -21,11 +21,11 @@ func NewServer() *gin.Engine {
 	r.Use(cors.New(corsConfig))
 
 	// 各種ハンドラーの生成
-	helloHandler := handler.NewHelloHandler("Hello World")
+	helloHandler := handler.NewHelloHandler("メッセージを書き換えてみてね")
 
 	// localhost:PORT/の GETのアクセスに対応する
 	r.GET("/", helloHandler.HandleGetHello)
-	// localhost:PORT/の POSTのアクセスに対応する
+	// localhost:PORT/の POSTのアクセスが来たら、helloHandler.HandlePostHello
 	r.POST("/", helloHandler.HandlePostHello)
 
 	return r
