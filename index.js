@@ -4,8 +4,9 @@ async function GetMessage() {
   const j = await fetch(url, {
     method: "GET"
   })
-  console.log(j);
-  document.getElementById("message").innerHTML = j.message
+  fetch(url)
+    .then(response => response.json())
+    .then(j => document.getElementById("message").innerHTML = j.message)
 }
 
 function PostMessage(m) {
