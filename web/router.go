@@ -12,6 +12,7 @@ func NewServer() *gin.Engine {
 	r := gin.Default()
 
 	// CORSの設定
+	// CORSについては→ https://qiita.com/att55/items/2154a8aad8bf1409db2b
 	corsConfig := cors.DefaultConfig()
 	corsConfig.AllowHeaders = []string{"*"}
 	corsConfig.AllowAllOrigins = true
@@ -22,8 +23,9 @@ func NewServer() *gin.Engine {
 	// 各種ハンドラーの生成
 	helloHandler := handler.NewHelloHandler("Hello World")
 
-	// Routing
+	// localhost:PORT/の GETのアクセスに対応する
 	r.GET("/", helloHandler.HandleGetHello)
+	// localhost:PORT/の POSTのアクセスに対応する
 	r.POST("/", helloHandler.HandlePostHello)
 
 	return r
